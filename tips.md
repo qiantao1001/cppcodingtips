@@ -6,15 +6,6 @@ void example() {
 }
 ```
 
-## 创建容器时，若知晓容器尺寸，应预留容器尺寸
-```cpp
-void example() {
-  static const std::site_t kFixedStringSize = 100;
-  std::vector<std::string> str_vec;
-  str_vec.reserve(kFixedStringSize);
-}
-```
-
 ## std::vector
 ### `emplace_back`优于`push_back`
 原因：`emplace_back`会自动构造对象。
@@ -30,5 +21,14 @@ void example() {
   std::vector<TestObj> obj_vec;
   obj_vec.emplace_back(1);
   obj_vec.emplace_back(TestObj(1));
+}
+```
+
+## 创建容器时，若知晓容器尺寸，应预留容器尺寸
+```cpp
+void example() {
+  static const std::site_t kFixedStringSize = 100;
+  std::vector<std::string> str_vec;
+  str_vec.reserve(kFixedStringSize);
 }
 ```
