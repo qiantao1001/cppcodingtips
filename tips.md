@@ -1,13 +1,21 @@
-# TIPS: STL容器
-## 使用初始化列表构造容器对象
+## TIPS: final关键字
+### 修饰类以禁止继承
+```cpp
+class Example final : Base {
+};
+```
+`Example`类不可继承。
+
+## TIPS: STL容器
+### 使用初始化列表构造容器对象
 ```cpp
 void example() {
   std::vector<int> int_vector{1, 2, 3, 4};
 }
 ```
 
-## std::vector
-### `emplace_back`优于`push_back`
+### std::vector
+#### `emplace_back`优于`push_back`
 原因：`emplace_back`会自动构造对象。
 ```cpp
 class TestObj {
@@ -20,14 +28,14 @@ class TestObj {
 void example() {
   std::vector<TestObj> obj_vec;
   obj_vec.emplace_back(1);
-  obj_vec.emplace_back(TestObj(1));
+  obj_vec.push_back(TestObj(1));
 }
 ```
 
-## 创建容器时，若知晓容器尺寸，应预留容器尺寸
+#### 创建已知尺寸的vector时，应预留容量
 ```cpp
 void example() {
-  static const std::site_t kFixedStringSize = 100;
+  constexpr std::site_t kFixedStringSize = 100;
   std::vector<std::string> str_vec;
   str_vec.reserve(kFixedStringSize);
 }
