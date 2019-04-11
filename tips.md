@@ -4,7 +4,7 @@
 class Example final : Base {
 };
 ```
-`Example`类不可继承。
+Example类不可继承。
 
 ## TIPS: STL容器
 ### 使用初始化列表构造容器对象
@@ -15,8 +15,8 @@ void example() {
 ```
 
 ### std::vector
-#### `emplace_back`优于`push_back`
-原因：`emplace_back`会自动构造对象。
+#### emplace_back优于push_back
+原因：emplace_back会自动构造对象。
 ```cpp
 class TestObj {
  public:
