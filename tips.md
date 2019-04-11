@@ -6,6 +6,14 @@ class Example final : Base {
 ```
 Example类不可继承。
 
+### 修饰虚函数以禁止override
+```
+class Example {
+ public:
+  virtual void HelloWorld() final {}  // 不能override
+};
+```
+
 ## TIPS: 匿名命名空间
 匿名命名空间可以将定义限定在文件作用域内，但不要用在头文件中。
 ```cpp
